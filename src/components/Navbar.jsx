@@ -5,7 +5,7 @@ import CartWidget from "./CartWidget";
 
 const Navbar = () => {
     return (
-  <nav className="navbar navbar-expand-lg bg-light">
+  <nav className="navbar navbar-expand-lg bg-light" id='navNina'>
     <div className="container-fluid">
       <a className="navbar-brand" href="#" >Nina Store</a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
