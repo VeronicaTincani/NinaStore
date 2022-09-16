@@ -1,6 +1,4 @@
-/*import { BsCart2 } from 'react-icons/fa';*/
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import CartWidget from "./CartWidget";
 
 const Navbar = () => {

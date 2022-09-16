@@ -1,14 +1,11 @@
 import Navbar from "./components/Navbar";
-import Contador from './components/itemListContainer';
-import Productos from './conteiners/productos';
+import Productos from './conteiners/ItemListContainer';
 
 function App() {
   return (
     <>
     <Navbar/>
-    <div className='container-card'>
-<Productos/>
-</div>
+    <Productos/> 
     </>
   );
 }
