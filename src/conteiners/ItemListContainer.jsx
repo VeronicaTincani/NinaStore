@@ -1,14 +1,9 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import Contador from './Contador';
 import getList from '../utils/getProducts';
 import ItemList from '../components/ItemList';
 
-
-
-const Productos=()=>{
+const ItemListContainer=()=>{
 
 const[ProdList, setProdList] = useState([]);
 
@@ -20,14 +15,14 @@ getList()
 },[])
 
 return(
+<>
 
-    <div  className='container-card'>
 <ItemList products={ProdList}/>
-    </div>
 
+</>
 )
 ;   
 }
 
 
-export default Productos
+export default ItemListContainer

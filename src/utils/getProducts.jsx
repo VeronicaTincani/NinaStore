@@ -86,6 +86,7 @@
 
 ];
 
+
 const getList = () =>{
   return new Promise((resolve, reject)=>{
     setTimeout(()=>{
@@ -93,5 +94,7 @@ const getList = () =>{
     }, 2000);
   })
 }
+
+
 
 export default getList;
