@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Contador from '../conteiners/Contador';
-import prodList from '../conteiners/ItemListContainer'
+
 
 
 const ItemList = ({ products })=> {

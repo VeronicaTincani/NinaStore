@@ -64,3 +64,8 @@ display: inline-block
 font-size: smaller;
 padding: 15px 15px 15px 15px;
 }
+
+.img-detail{
+  height: 600px;
+  width: 600px ;
+}

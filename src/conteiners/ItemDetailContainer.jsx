@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "../components/ItemDetail";
-import getList from "../utils/getProducts";
+import GetProducts from "../utils/getProducts";
+import costumFetch from "../utils/costumFetch";
 
-const ItemDetailContainer= ()=>{
+const ItemDetailContainer= () => {
     
-const[ProdList, setProdList] = useState([]);
+const[ProdDetail, setProdDetail] = useState({});
+         
+        useEffect(() => {
+        costumFetch(2000, GetProducts[0])
+        .then(response => setProdDetail(response))
+        .catch( err => console.log(err))
         
-        useEffect(()=>{
-        getList()
-        .then((response)=> setProdList(response))
-        .catch(()=>console.error('error'))
-        .finally()
-        },[])
+        },[]);
         
         return(
         
             <div  className='conteiner-detail'>
-        <ItemDetail products={ProdList}   />
+        <ItemDetail item={ProdDetail}/>
             </div>
         
         )
