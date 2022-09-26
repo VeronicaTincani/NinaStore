@@ -1,15 +1,15 @@
 import { useState } from "react";
 
 /*hook*/
- function Contador() {
-    const [valor, setValor] = useState(0); 
+ function Contador({ initial }) {
+    const [valor, setValor] = useState(initial); 
 
 function OnAdd(){ 
     valor<5 ? setValor(valor+1) : console.log("error")  //operador ternario
     }
 
 function Resta (){
-    valor> 1 ? setValor(valor-1) : console.log("error") 
+    valor> 0 ? setValor(valor-1) : console.log("error") 
     }
 
 return(
