@@ -26,7 +26,4 @@ const { id } = useParams();
         }
         
 
-
-
-
-export default ItemDetailContainer
+export default ItemDetailContainer;
