@@ -19,6 +19,22 @@ const removeItem = (id) =>{
         setCartList([...cartList])
 }
 
+/*const CalculoTotalPerItem = (idItem) =>{
+    let index = cartList.map(item => idItem).indexOf(idItem);
+    return cartList[index].costItem * cartList[index].cant
+}
+
+const calcSubTotal = () =>{
+let totalPerItem = cartList.map(item=> CalculoTotalPerItem(item.idTen));
+return totalPerItem.reduce((previusValue, currentValue)=>previousValue + currentValue);
+
+}*/
+
+
+
+
+
+
     return(
         <CartContext.Provider value={{ cartList, addItem, clear, removeItem }} >
             {children}

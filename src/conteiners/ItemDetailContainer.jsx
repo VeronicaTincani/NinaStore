@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import ItemDetail from "../components/ItemDetail";
-import GetProducts from "../utils/getProducts";
-import costumFetch from "../utils/costumFetch";
 import { useParams } from 'react-router-dom';
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../utils/firebaseConfig";
 
 const ItemDetailContainer= () => {
     
 const[ProdDetail, setProdDetail] = useState({});
 const { id } = useParams();
         useEffect(() => {
-        costumFetch(2000, GetProducts.find(item => item.id == id))
-        .then(response => setProdDetail(response))
-        .catch( err => console.log(err))
-        
+        const prodFetch = async () =>{
+        const docRef = doc(db, "products", id);
+        const docSnap = await getDoc(docRef);
+        setProdDetail(docSnap.data())
+        } 
+         prodFetch()  
         },[id]);
         
         return(
