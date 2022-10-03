@@ -6,37 +6,43 @@ const CartContextProvider=({children})=>{
   const [cartList, setCartList] = useState([]);
     
 const addItem = (product, cant) =>{
-setCartList([...cartList, product])
+if (!isInCart(product.id)) {
+    product.cantidadSeleccionada = cant
+   setCartList([...cartList, product])
+} else { product.cantidadSeleccionada += cant
+
 }
+}
+
 
 const clear = () => {
-setCartList([])
+setCartList([]) 
 }
 
-const removeItem = (id) =>{
-        const index = cartList.findIndex( item => item.id == id)
-        cartList.splice(index, 1)
-        setCartList([...cartList])
+const isInCart = (id) => {
+    if (cartList.find(item => item.id === id)) {
+        return true
+    } else {
+        return false
+    }
 }
 
-/*const CalculoTotalPerItem = (idItem) =>{
-    let index = cartList.map(item => idItem).indexOf(idItem);
+const removeItem = (itemId) => setCartList(cartList.filter((item) => item.id !== itemId))
+const cantItems = () => {
+    let index = cartList.map(item => item.cantidadSeleccionada)
+    return index.reduce((valorPrevio, valorActual) => valorPrevio + valorActual, 0)
+}
+
+const CalculoTotalPorItem = (itemId) =>{
+    let index = cartList.map(item => item.Id).indexOf(idItem);
     return cartList[index].costItem * cartList[index].cant
 }
-
-const calcSubTotal = () =>{
-let totalPerItem = cartList.map(item=> CalculoTotalPerItem(item.idTen));
-return totalPerItem.reduce((previusValue, currentValue)=>previousValue + currentValue);
-
-}*/
-
-
 
 
 
 
     return(
-        <CartContext.Provider value={{ cartList, addItem, clear, removeItem }} >
+        <CartContext.Provider value={{ cartList, addItem, clear, removeItem, cantItems, CalculoTotalPorItem }} >
             {children}
         </CartContext.Provider>
     )

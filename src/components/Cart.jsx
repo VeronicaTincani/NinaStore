@@ -2,9 +2,8 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import Button from 'react-bootstrap/Button';
 
-
 const Cart= () => {
-  const { cartList, clear, removeItem } = useContext(CartContext);
+  const { cartList, addItem, clear, removeItem, cantItems, CalculoTotalPorItem } = useContext(CartContext);
     return(
         <>
         <h1>Carrito</h1>

@@ -23,8 +23,9 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-
-       <CartWidget/>
+      {cartList.length !== 0
+            ? <CartWidget />
+            : <span></span>}
     </div>
   </nav>
   /*componente hasta acá, esta sintaxis es jsx*/
