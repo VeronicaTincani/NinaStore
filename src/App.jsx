@@ -8,6 +8,7 @@ import Cart from "./components/Cart";
 import CartWidget from "./components/CartWidget";
 import CartContextProvider from "./components/CartContext";
 
+
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
     <Route path="/cart" element={<Cart/>} />
     <Route path="/cart" element={<CartWidget/>} />
     </Routes>
+  
     </BrowserRouter>
     </CartContextProvider>
    </> 

@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import Contador from '../conteiners/Contador';
 import { CartContext } from './CartContext';
 import Button from 'react-bootstrap/Button';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 
 const ItemDetail= ({item}) => {
   const [valor, setValor] = useState(0); 
@@ -19,23 +21,29 @@ const ItemDetail= ({item}) => {
 
     return(
    <>
- {
-  <div className='detail-container'>
-      <img src={item.img} alt="perfume" className='img-detail'/>
-      <h1>{item.title}</h1>
-      <h4>{item.description}</h4>
-      <h5>${item.price}</h5>
-{   
-
-valor==0 
+ 
+  <div id="detail-product">
+    <ListGroup horizontal>
+      <ListGroup.Item><img src={item.img} alt="perfume" className='img-detail'/></ListGroup.Item>
+      <ListGroup.Item> <h2>{item.title}</h2>
+      <h3>{item.description}</h3>
+      <h4>${item.price}</h4>
+     {   valor==0 
 ? <Contador count={onAdd}/>
 : <Link to="/cart"> <Button variant="outline-danger">Checkout</Button></Link>
+}  </ListGroup.Item>
+      </ListGroup>
 
-}
+
+    
 
 </div>
+  
+      
+ 
 
-   }
+
+   
     </>
     );
         }

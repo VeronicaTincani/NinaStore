@@ -1,7 +1,7 @@
 const spinnLoading = () => {
     return (
-        <div className="spinner-border" role="status">
-            <span className="visually-hidden">Loading...</span>
+        <div>
+            <img src="https://www.superiorlawncareusa.com/wp-content/uploads/2020/05/loading-gif-png-5.gif" alt="cargando página" />
         </div>
     )
 }

@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 
+
 const Navbar = () => {
     return (
   <nav className="navbar navbar-expand-lg bg-light" id='navNina'>
@@ -13,24 +14,22 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link to="category/8" className="nav-link active" aria-current="page"  >Best Sellers</Link>
+            <Link to="category/BestSellers" className="nav-link active" aria-current="page">Best Sellers</Link>
           </li>
           <li className="nav-item">
-            <Link to="category/4" className="nav-link active" aria-current="page">For Woman</Link>
+            <Link to="category/ForWoman" className="nav-link active" aria-current="page">For Woman</Link>
           </li>
           <li className="nav-item">
-            <Link to="category/3"   className="nav-link active"    aria-current="page"  >For men</Link>
+            <Link to="category/ForMen"   className="nav-link active"    aria-current="page"  >For men</Link>
           </li>
         </ul>
       </div>
-      {cartList.length !== 0
-            ? <CartWidget />
-            : <span></span>}
+
+   <CartWidget />
+
     </div>
   </nav>
-  /*componente hasta acá, esta sintaxis es jsx*/
-  /*para llamar a la funcion es <ejemplo/>*/
-  /*fragment: etiqueta vacia <> </>*/
+
     );
   }
   
